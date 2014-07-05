@@ -8,8 +8,6 @@
  * Controller of the listRepoApp
  */
 angular.module('listRepoApp')
-  .controller('MainCtrl', function ($scope, Githubrepos) {
-    $scope.respos = [1,2,3];
-    console.log('bla');
-    console.log(Githubrepos.jsonpQuery());
+  .controller('MainCtrl', function ($scope, GitHubRepos) {
+    $scope.respos = GitHubRepos.all();
   });
