@@ -1,5 +1,10 @@
-<div class="row marketing">
-  <div class="repo" ng-repeat="r in respos.data">
-    <h5>{{ r.name }}</h3>
+<div class="row centerview">
+  <div class="row repo" ng-repeat="repo in respos.data | orderBy:'stargazers_count':true">
+    <div class="col-lg-6">
+      <h5> <a ng-href="#/repo-details/{{repo.name}}">{{ repo.name }}</a></h5>
+    </div>
+    <div class="col-lg-2 stat"><i class="fa fa-star"></i> {{ repo.stargazers_count }}</div>
+    <div class="col-lg-2 stat"><i class="fa fa-eye"></i> {{ repo.watchers_count }}</div>
+    <div class="col-lg-2 stat"><i class="fa fa-code-fork"></i> {{ repo.forks_count }}</div>
   </div>
 </div>

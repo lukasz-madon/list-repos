@@ -1,0 +1,12 @@
+<div class="row centerview">
+  <div class="row repo">
+    <div class="col-lg-6">
+      <div> <a ng-href="#/repo-details/{{repo.name}}">{{ repo.data.name }}</a>
+        &bull; <span am-time-ago="repo.data.updated_at"></span>
+      </div>
+    </div>
+    <div class="col-lg-2"><i class="fa fa-star"></i> {{ repo.data.stargazers_count }}</div>
+    <div class="col-lg-2"><i class="fa fa-eye"></i> {{ repo.data.watchers_count }}</div>
+    <div class="col-lg-2"><i class="fa fa-code-fork"></i> {{ repo.data.forks_count }}</div>
+  </div>
+</div>

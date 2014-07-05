@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularMoment'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -23,7 +24,14 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/repo-details/:repo', {
+        templateUrl: 'views/repodetails.html',
+        controller: 'RepodetailsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
   })
+  .controller('BodyCtrl', function ($scope, GitHubUser) {
+    $scope.user = GitHubUser.get();
+  });
