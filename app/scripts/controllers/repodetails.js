@@ -9,5 +9,5 @@
  */
 angular.module('listRepoApp')
   .controller('RepodetailsCtrl', function ($scope, $routeParams, GitHubRepo) {
-    $scope.repo = GitHubRepo.get({ repo: $routeParams.repo });
+    $scope.repo = GitHubRepo.get({ repo: $routeParams.repo, user: 'lukasz-madon' });
   });

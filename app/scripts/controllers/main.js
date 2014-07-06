@@ -9,5 +9,5 @@
  */
 angular.module('listRepoApp')
   .controller('MainCtrl', function ($scope, GitHubRepos) {
-    $scope.respos = GitHubRepos.all();
+    $scope.respos = GitHubRepos.all({ user: 'lukasz-madon' });
   });

@@ -1,12 +1,28 @@
 <div class="row centerview">
-  <div class="row repo">
+  <div class="row repo-first-line">
     <div class="col-lg-6">
-      <div> <a ng-href="#/repo-details/{{repo.name}}">{{ repo.data.name }}</a>
+      <div>
+        <strong><a ng-href="{{repo.data.html_url}}">{{ repo.data.name }}</a></strong>
         &bull; <span am-time-ago="repo.data.updated_at"></span>
       </div>
     </div>
-    <div class="col-lg-2"><i class="fa fa-star"></i> {{ repo.data.stargazers_count }}</div>
+    <div class="col-lg-2"><i class="fa fa-star"></i> {{ repo.data.subscribers_count }}</div>
     <div class="col-lg-2"><i class="fa fa-eye"></i> {{ repo.data.watchers_count }}</div>
     <div class="col-lg-2"><i class="fa fa-code-fork"></i> {{ repo.data.forks_count }}</div>
+  </div>
+  <div class="row repo-desc">
+    <div class="col-lg-12">
+    {{ repo.data.description }}
+    </div>
+  </div>
+  <div class="row repo-lang">
+   <div class="col-lg-12">
+    <h3>{{ repo.data.language }}</h3>
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <a ng-href="#/">Back to list</a>
+    </div>
   </div>
 </div>

@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+$body-bg-color: #f3f3ed;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -14,7 +16,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #f3f3ed;
+  background-color: $body-bg-color;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -80,6 +82,23 @@ body {
 .stat {
   margin-top: 10px;
 }
+.repo-first-line {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.repo-desc, .repo-lang {
+  margin-bottom: 10px;
+}
+.repo-lang {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: $body-bg-color;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

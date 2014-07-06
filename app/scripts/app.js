@@ -33,5 +33,5 @@ angular
       });
   })
   .controller('BodyCtrl', function ($scope, GitHubUser) {
-    $scope.user = GitHubUser.get();
+    $scope.user = GitHubUser.get({ user: 'lukasz-madon' });
   });
