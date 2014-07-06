@@ -16,8 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angularMoment'
+    'angularMoment',
+    'angular-loading-bar'
   ])
+  .constant('GITHUB_USERNAME', 'lukasz-madon')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -32,6 +34,6 @@ angular
         redirectTo: '/'
       });
   })
-  .controller('BodyCtrl', function ($scope, GitHubUser) {
-    $scope.user = GitHubUser.get({ user: 'lukasz-madon' });
+  .controller('BodyCtrl', function ($scope, GitHubUser, GITHUB_USERNAME) {
+    $scope.user = GitHubUser.get({ user: GITHUB_USERNAME });
   });
