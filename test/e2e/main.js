@@ -15,12 +15,23 @@ describe('my app', function() {
       browser.get('/#');
     });
 
-    it('should render default user', function() {
+    it('should render default user', function () {
       expect(element.all(by.css('.user-login')).first().getText()).toMatch(/lukasz-madon/);
     });
 
     it('should display only 20 repositories', function() {
       expect(element.all(by.css('.repo')).count()).toBeLessThan(21);
+    });
+
+    it('should display repositories ordered by stars', function() {
+      var arr = element.all(by.css('.repo fa fa-star'))
+      var last = undefined, sorted = true;
+      arr.map(function(val) {
+        var v = parseInt(val.getText(), 10)
+        if(last !== undefined && v < last) { sorted = false; }
+        last = v;
+      });
+      expect(sorted).toBe(true);
     });
 
   });
