@@ -23,7 +23,10 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><img class="avatar" ng-src="{{user.data.avatar_url}}"> {{ user.data.login }} </li>
+          <li>
+            <img class="avatar" ng-src="{{user.data.avatar_url}}">
+            <span class="user-login">{{ user.data.login }} </span>
+          </li>
         </ul>
         <h4 class="text-muted"><a ng-href="#/"><i class="fa fa-github-alt"></i> Popular repositories</a></h3>
       </div>

@@ -3,39 +3,37 @@
 
 describe('my app', function() {
 
-  // browser.get('/#');
+  browser.get('/#');
 
-  // it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-  //   expect(browser.getLocationAbsUrl()).toMatch("/view1");
-  // });
+  it('should automatically redirect to /# when location hash/fragment is empty', function() {
+    expect(browser.getLocationAbsUrl()).toMatch("/#");
+  });
 
+  describe('main view', function() {
 
-  // describe('view1', function() {
+    beforeEach(function() {
+      browser.get('/#');
+    });
+
+    it('should render default user', function() {
+      expect(element.all(by.css('.user-login')).first().getText()).toMatch(/lukasz-madon/);
+    });
+
+    it('should display only 20 repositories', function() {
+      expect(element.all(by.css('.repo')).count()).toBeLessThan(21);
+    });
+
+  });
+  // bug :( https://github.com/angular/protractor/issues/66
+  // describe('detailed repository view', function() {
 
   //   beforeEach(function() {
-  //     browser.get('index.html#/view1');
+  //     browser.get('#/repo-details/heroesgenerator');
   //   });
 
-
-  //   it('should render view1 when user navigates to /view1', function() {
-  //     expect(element.all(by.css('[ng-view] p')).first().getText()).
-  //       toMatch(/partial for view 1/);
+  //   it('should render repository title', function() {
+  //     console.log(element('body').getText());
+  //     expect(element('body').getText()).toContain('heroesgenerator');
   //   });
-
-  // });
-
-
-  // describe('view2', function() {
-
-  //   beforeEach(function() {
-  //     browser.get('index.html#/view2');
-  //   });
-
-
-  //   it('should render view2 when user navigates to /view2', function() {
-  //     expect(element.all(by.css('[ng-view] p')).first().getText()).
-  //       toMatch(/partial for view 2/);
-  //   });
-
   // });
 });
