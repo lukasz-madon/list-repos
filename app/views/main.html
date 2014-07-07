@@ -1,5 +1,5 @@
 <div class="row centerview">
-  <div class="row repo" ng-repeat="repo in respos.data | orderBy:'stargazers_count':true | limitTo:20">
+  <div class="row repo" ng-repeat="repo in repos.data | orderBy:'stargazers_count':true | limitTo:20">
     <div class="col-lg-8">
       <h5> <a ng-href="#/repo-details/{{repo.name}}">{{ repo.name }}</a></h5>
     </div>

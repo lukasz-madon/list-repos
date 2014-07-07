@@ -6,17 +6,24 @@ describe('Controller: MainCtrl', function () {
   beforeEach(module('listRepoApp'));
 
   var MainCtrl,
-    scope;
+    scope,
+    GitHubReposMock,
+    mockResponse;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
+    mockResponse = {}
+    GitHubReposMock = {
+      all : function() { return mockResponse; }
+    }
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+      $scope: scope,
+      GitHubRepos: GitHubReposMock
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    //expect(scope.awesomeThings.length).toBe(3);
+  it('repos should be set to response when MainCtrl runs', function () {
+    expect(scope.repos).toBe(mockResponse);
   });
 });

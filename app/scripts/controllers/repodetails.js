@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc function
+ * @ngdoc Detailed information about given repository.
  * @name listRepoApp.controller:RepodetailsCtrl
  * @description
  * # RepodetailsCtrl

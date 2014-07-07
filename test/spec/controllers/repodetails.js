@@ -6,17 +6,24 @@ describe('Controller: RepodetailsCtrl', function () {
   beforeEach(module('listRepoApp'));
 
   var RepodetailsCtrl,
-    scope;
+    scope,
+    GitHubRepoMock,
+    mockResponse;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
+    mockResponse = {}
+    GitHubRepoMock = {
+      get : function() { return mockResponse; }
+    }
     RepodetailsCtrl = $controller('RepodetailsCtrl', {
-      $scope: scope
+      $scope: scope,
+      GitHubRepo: GitHubRepoMock
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-
+  it('repo should be set to response when RepodetailsCtrl runs', function () {
+    expect(scope.repo).toBe(mockResponse);
   });
 });
