@@ -11,4 +11,6 @@ This is frontend app build with AngularJS, Bootstrap, SASS, Bower, Grunt and Kar
 
 ## Getting started
 
-Command `grunt serve` starts local server. `grunt` runs all tasks.
+Command `grunt serve` starts local server. `grunt test` to run unit tests. 
+
+To start e2e tests first start Selenium `node_modules/protractor/bin/webdriver-manager start`, http server (grunt serve is good enough to run it locally) and then run `grunt protractor`.

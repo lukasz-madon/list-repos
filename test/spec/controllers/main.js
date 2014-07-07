@@ -13,10 +13,10 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    mockResponse = {}
+    mockResponse = {};
     GitHubReposMock = {
       all : function() { return mockResponse; }
-    }
+    };
     MainCtrl = $controller('MainCtrl', {
       $scope: scope,
       GitHubRepos: GitHubReposMock

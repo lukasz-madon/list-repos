@@ -13,10 +13,10 @@ describe('Controller: BodyCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    mockResponse = {}
+    mockResponse = {};
     GitHubUserMock = {
       get : function() { return mockResponse; }
-    }
+    };
     BodyCtrl = $controller('BodyCtrl', {
       $scope: scope,
       GitHubUser: GitHubUserMock
@@ -35,7 +35,7 @@ describe('Controller: BodyCtrl', function () {
       expect($route.routes['/repo-details/:repo'].controller).toBe('RepodetailsCtrl');
       expect($route.routes['/repo-details/:repo'].templateUrl).toBe('views/repodetails.html');
 
-      expect($route.routes[null].redirectTo).toEqual('/')
+      expect($route.routes[null].redirectTo).toEqual('/');
     }));
   });
 });
